@@ -9,3 +9,5 @@ content:
 - Pick your team
 - Returning from a method
 - Returning values from an anonymous class
+- Output names of the methods
+- Getting current thread info
