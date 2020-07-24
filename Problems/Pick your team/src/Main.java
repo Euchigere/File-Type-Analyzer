@@ -23,7 +23,7 @@ interface PersonSelectionAlgorithm {
 }
 
 class TakePersonsWithStepAlgorithm implements PersonSelectionAlgorithm {
-    final private int step;
+    final int step;
 
     public TakePersonsWithStepAlgorithm(int step) {
         // write your code here
@@ -46,7 +46,7 @@ class TakePersonsWithStepAlgorithm implements PersonSelectionAlgorithm {
 
 
 class TakeLastPersonsAlgorithm implements PersonSelectionAlgorithm {
-    final private int count;
+    final int count;
 
     public TakeLastPersonsAlgorithm(int count) {
         // write your code here

@@ -114,9 +114,8 @@ class FileTypeAnalyzer {
         this.algorithm = algorithm;
     }
 
-    public void checkFileType(String pattern, String filePath, String fileType) {
-        byte[] unknownFileByteArray;
-        unknownFileByteArray = null;
+    public void checkFileType(String pattern, String filePath, String fileType) throws IOException {
+        byte[] unknownFileByteArray = null;
 
         try {
             unknownFileByteArray = Files.readAllBytes(Paths.get(filePath));
