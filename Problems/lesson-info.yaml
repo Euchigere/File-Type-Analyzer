@@ -18,3 +18,4 @@ content:
 - Calculate the number of distinct characters
 - Summing with threads
 - Interrupting a thread
+- Handling interruptions
