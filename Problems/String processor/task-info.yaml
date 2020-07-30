@@ -16,8 +16,9 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/2526
-status: Unchecked
+status: Solved
 feedback:
-  message: Failed to get check result from JetBrains Academy
-  time: Tue, 28 Jul 2020 11:34:48 UTC
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/2526">JetBrains
+    Academy</a></html>
+  time: Tue, 28 Jul 2020 11:37:11 UTC
 record: -1
