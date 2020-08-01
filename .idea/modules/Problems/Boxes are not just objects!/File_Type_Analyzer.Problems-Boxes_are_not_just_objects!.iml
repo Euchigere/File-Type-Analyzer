@@ -3,9 +3,9 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../../Problems/Boxes are not just objects!">
-      <excludeFolder url="file://$MODULE_DIR$/../../../../Problems/Boxes are not just objects!/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../Problems/Boxes are not just objects!/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../Problems/Boxes are not just objects!/out" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Problems/Boxes are not just objects/!/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Problems/Boxes are not just objects/!/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Problems/Boxes are not just objects/!/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
