@@ -4,7 +4,7 @@ import java.nio.file.*;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         if (args.length != 4) {
             throw new IllegalArgumentException("Exactly 4 parameters required");
         }
@@ -17,11 +17,10 @@ public class Main {
         long startTime = System.nanoTime();
         if ("--naive".equals(algorithm)) {
             analyzeFile = new FileTypeAnalyzer(new NaiveAlgorithm());
-            analyzeFile.checkFileType(pattern, filePath, fileType);
         } else {
             analyzeFile = new FileTypeAnalyzer(new KPMAlgorithm());
-            analyzeFile.checkFileType(pattern, filePath, fileType);
         }
+        analyzeFile.checkFileType(pattern, filePath, fileType);
         long elapsedNanos = System.nanoTime() - startTime;
         System.out.println("it took " + elapsedNanos + " seconds");
     }
@@ -114,7 +113,7 @@ class FileTypeAnalyzer {
         this.algorithm = algorithm;
     }
 
-    public void checkFileType(String pattern, String filePath, String fileType) throws IOException {
+    public void checkFileType(String pattern, String filePath, String fileType) {
         byte[] unknownFileByteArray = null;
 
         try {
