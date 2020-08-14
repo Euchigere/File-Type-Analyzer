@@ -131,10 +131,12 @@ topics:
     theory_id: 3611
   - title: Computer algorithms
     theory_id: 4953
-  - title: The big O notation
-    theory_id: 4991
   - title: Time complexity function
     theory_id: 9724
+  - title: Introducing the first algorithm
+    theory_id: 10336
+  - title: The big O notation
+    theory_id: 4991
   - title: String basics
     theory_id: 5141
   - title: Searching a substring
@@ -180,12 +182,12 @@ topics:
   2:
   - title: Immutability
     theory_id: 7929
-  - title: Data structures
-    theory_id: 5161
   - title: Pseudocode basics
     theory_id: 8228
   - title: Complex constructions in pseudocode
     theory_id: 8233
+  - title: Data structures
+    theory_id: 5161
   - title: Fixed-size array
     theory_id: 7255
   - title: Dynamic array
@@ -208,8 +210,6 @@ topics:
     theory_id: 3492
   - title: Generics and Object
     theory_id: 3493
-  - title: Functional interfaces and lambda expressions
-    theory_id: 3601
   - title: Executors
     theory_id: 4895
   - title: What are collections
@@ -232,6 +232,8 @@ topics:
     theory_id: 3564
   - title: Boxing and unboxing
     theory_id: 3595
+  - title: Functional interfaces and lambda expressions
+    theory_id: 3601
   3:
   - title: Recursion basics
     theory_id: 5984
