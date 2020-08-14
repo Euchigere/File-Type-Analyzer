@@ -11,21 +11,21 @@ class FileTypeAnalyzer {
         this.algorithm = algorithm;
     }
 
-    public void checkFileType(String pattern, String filePath, String fileType) {
+    public String checkFileType(String pattern, String filePath, String file, String fileType) {
         byte[] unknownFileByteArray = null;
 
         try {
             unknownFileByteArray = Files.readAllBytes(Paths.get(filePath));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("unable to read file");
         }
 
         boolean isMatch = algorithm.findPattern(pattern, unknownFileByteArray);
 
         if (isMatch) {
-            System.out.println(fileType);
+            return file + ": " + fileType;
         } else {
-            System.out.println("Unknown file type");
+            return file + ": Unknown file type";
         }
     }
 }
