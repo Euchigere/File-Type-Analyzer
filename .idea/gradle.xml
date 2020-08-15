@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/Problems/Boxes are not just objects!" />
             <option value="$PROJECT_DIR$/Problems/Calculate the number of distinct characters" />
             <option value="$PROJECT_DIR$/Problems/Check whether a number is prime" />
+            <option value="$PROJECT_DIR$/Problems/Count the number of merge operations" />
             <option value="$PROJECT_DIR$/Problems/Execute Callable objects" />
             <option value="$PROJECT_DIR$/Problems/Filtering the list" />
             <option value="$PROJECT_DIR$/Problems/Getting current thread info" />
@@ -30,6 +31,7 @@
             <option value="$PROJECT_DIR$/Problems/Interrupting a thread" />
             <option value="$PROJECT_DIR$/Problems/Max and Min" />
             <option value="$PROJECT_DIR$/Problems/Max of two integers" />
+            <option value="$PROJECT_DIR$/Problems/Merge all sequences" />
             <option value="$PROJECT_DIR$/Problems/Message notifier as a thread" />
             <option value="$PROJECT_DIR$/Problems/Messaging" />
             <option value="$PROJECT_DIR$/Problems/Non-overlapping occurrences" />
@@ -43,6 +45,8 @@
             <option value="$PROJECT_DIR$/Problems/String processor" />
             <option value="$PROJECT_DIR$/Problems/Summing with threads" />
             <option value="$PROJECT_DIR$/Problems/The first occurrence" />
+            <option value="$PROJECT_DIR$/Problems/The number of inversions" />
+            <option value="$PROJECT_DIR$/Problems/The number of required shifts" />
             <option value="$PROJECT_DIR$/Problems/VeganPizza" />
             <option value="$PROJECT_DIR$/Problems/Writing a thread for printing numbers" />
             <option value="$PROJECT_DIR$/util" />

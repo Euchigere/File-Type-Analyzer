@@ -32,3 +32,7 @@ content:
 - How many tasks are finished
 - How many Callable objects are there?
 - Execute Callable objects
+- The number of required shifts
+- Count the number of merge operations
+- Merge all sequences
+- The number of inversions
