@@ -1,29 +1,26 @@
 package analyzer;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 3) {
+        if (args.length != 2) {
             throw new IllegalArgumentException("Exactly 4 parameters required");
         }
-        String folder = args[0];
-        String pattern = args[1];
-        String fileType = args[2];
+        String fileFolder = args[0];
+        String patterns = args[1];
 
-
-        File file = new File(folder);
-        String[] files = file.list();
+        File file = new File(fileFolder);
+        File[] files = file.listFiles();
         List<Callable<String>> callables = new ArrayList<>();
-        for (String fileName : files) {
+        for (File filePath : files) {
 
             callables.add(
                     () -> {
                         FileTypeAnalyzer analyzeFile = new FileTypeAnalyzer(new KPMAlgorithm());
-                        return analyzeFile.checkFileType(pattern, folder +"/" + fileName, fileName, fileType);
+                        return analyzeFile.processPatterns(patterns, filePath.getPath(), filePath.getName());
                     }
             );
         }
