@@ -299,6 +299,160 @@ files:
         }
     }
   learner_created: false
+- name: src/analyzer/SearchAlgorithm.java
+  visible: true
+  text: |-
+    package analyzer;
+
+    interface SearchAlgorithm{
+        boolean findPattern(String pattern, byte[] unknownFileByteArray);
+    }
+  learner_created: true
+- name: src/analyzer/KPMAlgorithm.java
+  visible: true
+  text: |-
+    package analyzer;
+
+    class KPMAlgorithm implements SearchAlgorithm {
+        @Override
+        public boolean findPattern(String pattern, byte[] unknownFileByteArray) {
+            /* 1 */
+            int[] prefixFunc = prefixFunction(pattern);
+            int j = 0;
+            /* 2 */
+            int i;
+            for (i = 0; i < unknownFileByteArray.length; i++) {
+                /* 3 */
+                while (j > 0 && unknownFileByteArray[i] != pattern.charAt(j)) {
+                    j = prefixFunc[j - 1];
+                }
+                /* 4 */
+                if (unknownFileByteArray[i] == pattern.charAt(j)) {
+                    j += 1;
+                }
+                /* 5 */
+                if (j == pattern.length()) {
+                    return true;
+                }
+            }
+            /* 6 */
+            return false;
+        }
+
+        private int[] prefixFunction(String pattern) {
+            /* 1 */
+            int[] prefixFunc = new int[pattern.length()];
+
+            /* 2 */
+            for (int i = 1; i < pattern.length(); i++) {
+                /* 3 */
+                int j = prefixFunc[i - 1];
+
+                while (j > 0 && pattern.charAt(i) != pattern.charAt(j)) {
+                    j = prefixFunc[j - 1];
+                }
+
+                /* 4 */
+                if (pattern.charAt(i) == pattern.charAt(j)) {
+                    j += 1;
+                }
+
+                /* 5 */
+                prefixFunc[i] = j;
+            }
+
+            /* 6 */
+            return prefixFunc;
+        }
+    }
+  learner_created: true
+- name: src/analyzer/FileTypeAnalyzer.java
+  visible: true
+  text: |
+    package analyzer;
+
+    import java.io.*;
+    import java.nio.file.Files;
+    import java.nio.file.Paths;
+    import java.util.*;
+
+    class FileTypeAnalyzer {
+        SearchAlgorithm algorithm;
+
+        public FileTypeAnalyzer(SearchAlgorithm algorithm) {
+            this.algorithm = algorithm;
+        }
+
+        public String processPatterns(String patternsFile, String filePath, String fileName) {
+            List<List<String>> lists = new ArrayList<>();
+            try (BufferedReader fis = new BufferedReader( new FileReader(patternsFile))) {
+                String line;
+                while((line = fis.readLine()) != null) {
+                    List<String> arr = new ArrayList<>();
+                    arr.addAll(
+                            Arrays.asList(line.split(";"))
+                    );
+                    lists.add(arr);
+                }
+            } catch (Exception e) {
+                System.out.println("problem reaading pattern files");
+            }
+            Collections.sort(lists, (t1, t2) -> t2.get(0).compareTo(t1.get(0)));
+            String pattern;
+            String fileType;
+            boolean isMatch;
+            for (List<String> list : lists) {
+                pattern = list.get(1).replace("\"", "");
+                fileType = list.get(2).replace("\"", "");
+                isMatch = checkFileType(pattern, filePath);
+                if (isMatch) {
+                    return fileName + ": " + fileType;
+                }
+            }
+            return fileName + ": Unknown file type";
+        }
+
+        public boolean checkFileType(String pattern, String filePath) {
+            byte[] unknownFileByteArray = null;
+
+            try {
+                unknownFileByteArray = Files.readAllBytes(Paths.get(filePath));
+            } catch (IOException e) {
+                System.out.println("unable to read file");
+            }
+
+            return algorithm.findPattern(pattern, unknownFileByteArray);
+        }
+    }
+  learner_created: true
+- name: src/analyzer/NaiveAlgorithm.java
+  visible: true
+  text: |
+    package analyzer;
+
+    class NaiveAlgorithm implements SearchAlgorithm {
+        @Override
+        public boolean findPattern(String pattern, byte[] unknownFileByteArray) {
+            int i = 0;
+            int j = 0;
+
+            while (i < unknownFileByteArray.length && j < pattern.length()) {
+                if (unknownFileByteArray[i] == pattern.charAt(j)) {
+                    i++;
+                    j++;
+
+                    if (j == pattern.length() - 1) {
+                        return true;
+                    }
+                } else {
+                    i = i - j + 1;
+                    j = 0;
+                }
+            }
+            return false;
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/64/stages/347/implement
 status: Unchecked
 record: -1

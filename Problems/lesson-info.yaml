@@ -36,3 +36,4 @@ content:
 - Count the number of merge operations
 - Merge all sequences
 - The number of inversions
+- Calculating a substring hash
