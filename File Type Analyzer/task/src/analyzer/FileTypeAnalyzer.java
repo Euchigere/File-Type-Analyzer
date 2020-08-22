@@ -17,6 +17,7 @@ class FileTypeAnalyzer {
         try (BufferedReader fis = new BufferedReader( new FileReader(patternsFile))) {
             String line;
             while((line = fis.readLine()) != null) {
+
                 List<String> arr = new ArrayList<>();
                 arr.addAll(
                         Arrays.asList(line.split(";"))
@@ -33,6 +34,7 @@ class FileTypeAnalyzer {
         for (List<String> list : lists) {
             pattern = list.get(1).replace("\"", "");
             fileType = list.get(2).replace("\"", "");
+
             isMatch = checkFileType(pattern, filePath);
             if (isMatch) {
                 return fileName + ": " + fileType;
@@ -46,6 +48,7 @@ class FileTypeAnalyzer {
 
         try {
             unknownFileByteArray = Files.readAllBytes(Paths.get(filePath));
+
         } catch (IOException e) {
             System.out.println("unable to read file");
         }

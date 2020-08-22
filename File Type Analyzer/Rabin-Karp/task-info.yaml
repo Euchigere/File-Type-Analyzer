@@ -453,6 +453,13 @@ files:
         }
     }
   learner_created: true
+- name: src/analyzer/RabinKarpAlgorithm.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/64/stages/347/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/64/stages/347/implement">JetBrains
+    Academy</a>
+  time: Sat, 22 Aug 2020 21:11:13 UTC
 record: -1
